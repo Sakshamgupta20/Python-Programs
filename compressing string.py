@@ -5,8 +5,12 @@ Created on Tue May 21 17:22:13 2019
 @author: Saksham
 """
 
-from itertools import groupby
-
-x='1222311'
-
-print(*[(len(list(j)),int(i)) for i,j in groupby(input())])
+from collections import OrderedDict
+x=OrderedDict()
+for i in range(int(input())):
+    a=input()
+    if a not in x:
+        x[a]=1
+    else:
+        x[a]+=1
+print(len(x),print(*[j for i,j in x.items()]))
